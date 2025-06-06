@@ -1,0 +1,14 @@
+/*
+./mpd/playlists/
+!.gitignore
+!backlight
+!dunst
+!i3
+!kitty
+!nvim
+!polybar
+!pipewire
+!rmpc
+!volume
+!sub
+!mpd
