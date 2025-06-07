@@ -11,7 +11,7 @@ mkdir -p "$TMP_DIR"
 ALBUM_ART_PATH="$TMP_DIR/notification_cover"
 SONG=$(rmpc song)
 
-ARTIST=$(jq -r '.metadata.artist' <<< "$SONG")
+ARTIST=$(echo "$SONG" | jq -r '.metadata.artist | if type == "array" then join(" | ") else . end')
 TITLE=$(jq -r '.metadata.title' <<< "$SONG")
 
 # Path to fallback album art if no album art is found by rmpc/mpd
